@@ -1,0 +1,17 @@
+FROM node:18-alpine
+
+ARG FRONTEND_URL
+ARG FRONTEND_PORT
+
+ENV FRONTEND_URL=$FRONTEND_URL
+ENV FRONTEND_PORT=$FRONTEND_PORT
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN yarn install
+
+EXPOSE 4321
+
+CMD ["yarn", "start"]

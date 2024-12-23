@@ -1,0 +1,16 @@
+{
+    "name": "myapp",
+    "private": true,
+    "workspaces": [
+      "packages/*"
+    ],
+    "scripts": {
+      "dev": "concurrently \"yarn workspace backend dev\" \"yarn workspace admin dev\" \"yarn workspace frontend dev\"",
+      "build": "yarn workspace backend build && yarn workspace admin build && yarn workspace frontend build",
+      "start": "yarn workspace backend start"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.0"
+    },
+    "version": "1.0.0"
+  }

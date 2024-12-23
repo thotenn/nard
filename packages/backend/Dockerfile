@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+ARG NODE_ENV
+ARG BACKEND_URL
+ARG BACKEND_PORT
+
+ENV NODE_ENV=$NODE_ENV
+ENV BACKEND_URL=$BACKEND_URL
+ENV BACKEND_PORT=$BACKEND_PORT
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN yarn install
+
+EXPOSE $BACKEND_PORT
+
+CMD ["yarn", "start:dev"]
