@@ -65,9 +65,10 @@ yarn workspace frontend dev
 
 ## 📍 Default Ports
 
-- Backend: `http://localhost:3000`
-- Admin Panel: `http://localhost:5173`
-- Frontend: `http://localhost:4321`
+- PostgresDB-port: `5442`
+- Backend: `http://localhost:3077`
+- Admin Panel: `http://localhost:3078`
+- Frontend: `http://localhost:3079`
 
 ## 🤝 Contributing
 
