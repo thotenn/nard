@@ -8,9 +8,10 @@ ENV FRONTEND_PORT=$FRONTEND_PORT
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package*.json ./
+RUN test -d node_modules || yarn install
 
-RUN yarn install
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 EXPOSE 4321
 
